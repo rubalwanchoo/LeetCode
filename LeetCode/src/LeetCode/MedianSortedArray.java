@@ -65,7 +65,7 @@ public class MedianSortedArray {
 		
 		
 		
-		int  startX = 0;
+		int startX = 0;
 		int endX = xLength-1;		
 		int partitionX = (endX+startX)/2;
 		//System.out.println("partitionX-"+partitionX);
