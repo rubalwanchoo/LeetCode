@@ -1,7 +1,7 @@
 package LeetCode;
 
 //Solution below DOES NOT WORK, need to get new knowledge on Dynamic Programming to solve this
-public class RegexMatching {
+public class RegeexMatching_Deprecated {
 	
 	/*
 	 	Given an input string (s) and a pattern (p), implement regular expression matching with support for '.' and '*'.
