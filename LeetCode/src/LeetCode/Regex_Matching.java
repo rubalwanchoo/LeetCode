@@ -6,6 +6,8 @@ public class Regex_Matching {
 		
 		//System.out.println(isMatch("xaabyc".toCharArray(),"xa*b.c".toCharArray()));
 		System.out.println(isMatch("aab".toCharArray(),"c*a*b".toCharArray()));
+		
+		
 
 	}
 	
