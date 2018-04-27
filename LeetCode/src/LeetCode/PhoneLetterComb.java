@@ -33,46 +33,6 @@ public class PhoneLetterComb {
 		
 		List<String> myList = new ArrayList<String>();
 		
-		HashMap<Integer,String[]> map1 = new HashMap<Integer,String[]>(); 
-		HashMap<String,Integer> map2 = new HashMap<String,Integer>();
-		
-		map1 = initializeMap1(map1);
-		map2 = initializeMap2(map1,map2);
-		
-		if(digits.length()==1) {
-			myList = Arrays.asList(map1.get(Integer.parseInt(digits)));
-			
-			return myList;
-		}
-		
-		List<String> digitsList = new ArrayList<String>();
-		
-		for(int i=0;i<digits.length();i++) {
-			
-			String[] array = map1.get(Integer.parseInt(String.valueOf(digits.charAt(i))));
-			for(String item:array) {
-				digitsList.add(item);
-			}
-		}
-		
-		//displayList(digitsList);
-		
-		Object[] digitsArray = digitsList.toArray();
-		
-		for (int i=0;i<digitsArray.length-1;i++) {
-			
-			for(int j=i+1;j<digitsArray.length;j++) {
-				
-				myList.add(""+(String)digitsArray[i]+(String)digitsArray[j]);
-				/*
-				if(map2.get((String)digitsArray[j])!=map2.get((String)digitsArray[i])) {
-					myList.add(""+(String)digitsArray[i]+(String)digitsArray[j]);
-				}
-				*/
-			}
-		}
-		
-		
 		
 
 		
@@ -81,22 +41,7 @@ public class PhoneLetterComb {
     }
 	
 	
-	public static HashMap<String,Integer> initializeMap2(HashMap<Integer,String[]> map1,HashMap<String,Integer> map2){
-
-		Iterator<Integer> it = map1.keySet().iterator();
-		
-		while(it.hasNext()) {
-			Integer key = it.next();
-			String[] array = map1.get(key);
-			
-			for(String item:array) {
-				map2.put(item, key);
-			}
-		}
-		
-		
-		return map2;
-	}
+	
 	
 	public static HashMap<Integer,String[]> initializeMap1(HashMap<Integer,String[]> myMap1){
 		
