@@ -22,8 +22,8 @@ public class KFrequentElements {
 	 */
 	
 	public static void main(String args[]) {
-		//topKFrequent(new int[] {1,1,1,2,2,3},2);
-		topKFrequent(new int[] {1,2},1);
+		topKFrequent(new int[] {1,1,1,2,2,3},2);
+		//topKFrequent(new int[] {1,2},2);
 	}
 	
 	
@@ -34,7 +34,9 @@ public class KFrequentElements {
         
         
         if(nums.length == 1 && k ==1) {
+
         	returnList.add(Integer.valueOf(nums[0]));
+        	displayArray(returnList);
         	return returnList;
         }
         
@@ -51,26 +53,20 @@ public class KFrequentElements {
         
         for(int i=0;i<nums.length;i++) {
         	
-        	int count = 0;
+        	int count = 1;
 
         	if(i<nums.length-1) {
-        		do {
-            		count++;
-            		i++;
-            	}while(i<nums.length && nums[i]==nums[i+1]);
-        		
-        		myMap = addToMap(myMap,count,nums[i]);
-            	
-        	}
-        	else {//(i == nums.length-1)
-        		if(nums[i]!= nums[i-1]) {
+        		while(i<nums.length-1 && nums[i]==nums[i+1]) {
         			count++;
-        			
+        			i++;
         		}
-        		myMap = addToMap(myMap,count,nums[i]);
-        	}
 
+        	}
+        	
+        		myMap = addToMap(myMap,count,nums[i]);
         }
+
+        
         
         System.out.println(myMap.get(3));
         System.out.println(myMap.get(2));
@@ -83,14 +79,15 @@ public class KFrequentElements {
         	
         	
         	if(myMap.get(j)!=null) {
-        		
-        		
+
         		Iterator<Integer> it = myMap.get(j).iterator();
 
         		while(it.hasNext()) {
         			returnList.add(it.next());
         			returnCount ++;
-        			if(returnCount==k) {break;}
+        			
+        			//System.out.println("returnCount-"+returnCount+" k-"+k);
+        			if(returnCount==k) {return returnList;}
         		}
         		
         	}
@@ -111,9 +108,11 @@ public class KFrequentElements {
 		
 		if(myMap.get(key)==null) {
 			arrayList = new ArrayList<Integer>();	
+			System.out.println("Creating new arrayList and adding "+valueToAdd);
 		}
 		else {
 			arrayList = myMap.get(Integer.valueOf(key));
+			System.out.println("Updating existing arrayList and adding "+valueToAdd);
 			
 		}
 		
