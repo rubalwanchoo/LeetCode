@@ -61,6 +61,10 @@ public class HistogramLargestRect {
 			
 		}
 		
+		if(maxArea<0) {
+			maxArea=0;
+		}
+		
 		return maxArea;
     }
 	
@@ -70,6 +74,8 @@ public class HistogramLargestRect {
 		if(tempArea>maxArea) {
 			maxArea = tempArea;
 		}
+		
+		
 		return maxArea;
 	}
 
