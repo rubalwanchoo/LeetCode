@@ -24,45 +24,18 @@ public class ContainerWithMostWater {
 	
 	public static int maxArea(int[] height) {
         int maxArea = 0;
+		int left = 0;
+		int right = height.length-1;
 		
-        Stack<Integer> pStack = new Stack<Integer>();
-        
-        
-        int i = 0;
-        while(i<height.length) {
-        	
-        	
-        	if(pStack.isEmpty() || height[i]>=height[pStack.peek()]) {
-        		pStack.push(i);
-        		i++;
-        	}else {
-        		
-        		while(!pStack.isEmpty() && height[i]<height[pStack.peek()]) {
-        			
-        			maxArea = calculateMaxArea(height[i],i-pStack.peek(),maxArea);
-            		pStack.pop();
-            		
-        		}
-        		
-        		
-        		
-        		if(pStack.isEmpty()) {
-        			break;
-        		}
-        	}
-        	
-        }//end while
-        
-        i--;
-        
-        while(!pStack.isEmpty()) {
-        	pStack.pop();
-        	
-        	if(!pStack.isEmpty()) {
-        		maxArea = calculateMaxArea(height[pStack.peek()],i-pStack.peek(),maxArea);
-        	}
-        	
-        }
+		while(left<right) {
+			
+			int low = height[left]<height[right]?left:right;
+			
+			maxArea = calculateMaxArea(height[low],right-left,maxArea);
+			
+			if(low==left)left++;
+			if(low==right)right--;
+		}
         
         
         return maxArea;
