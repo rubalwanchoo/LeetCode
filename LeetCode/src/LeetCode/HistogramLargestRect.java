@@ -25,6 +25,7 @@ public class HistogramLargestRect {
 		System.out.println(largestRectangleArea(new int[] {2,1,5,6,2,3}));//10
 		System.out.println(largestRectangleArea(new int[] {1,1}));//2
 		System.out.println(largestRectangleArea(new int[] {2,1,2}));//3
+		System.out.println(largestRectangleArea(new int[] {3,2,1,3}));//9
 	}
 	
 	public static int largestRectangleArea(int[] heights) {
