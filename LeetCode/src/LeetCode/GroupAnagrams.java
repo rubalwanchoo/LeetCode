@@ -27,7 +27,7 @@ public class GroupAnagrams {
 	
 	public static void main(String args[]) {
 		
-		HashMap<String,Integer> alphaMap = new HashMap<String,Integer>(); 
+		HashMa<String,Integer> alphaMap = new HashMap<String,Integer>(); 
 		
 		alphaMap = initializePrimeAlpha(alphaMap);
 	}

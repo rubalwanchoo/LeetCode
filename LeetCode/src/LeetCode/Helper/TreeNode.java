@@ -27,7 +27,7 @@ public class TreeNode {
 			 TreeNode temp = (arr[pIdx]==-1)?new TreeNode():new TreeNode(arr[pIdx]);
 	
 			 root= temp;
-			 System.out.println("returning root value "+root.val);
+			 //System.out.println("returning root value "+root.val);
 			 
 			 //Insert left child
 			 root.left = createNodes(root.left,2*pIdx+1,arr);
