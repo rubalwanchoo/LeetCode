@@ -1,5 +1,7 @@
 package LeetCode.Amazon;
 
+import java.util.ArrayList;
+
 public class Powxn {
 	
 	/*
@@ -28,6 +30,8 @@ public class Powxn {
 		
 		System.out.println(myPow(2.00000,-2));
 		System.out.println(myPow(2.10000,3));
+		
+		
 
 	}
 	

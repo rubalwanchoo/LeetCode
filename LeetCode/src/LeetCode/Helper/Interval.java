@@ -12,4 +12,9 @@ public class Interval implements Comparable<Interval>{
 		return this.start - a.start; 
 		
 	}
+    
+    public String toString() {
+    	
+    	return this.start + "-" + this.end;
+    }
 }
