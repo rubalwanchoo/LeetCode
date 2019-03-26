@@ -9,13 +9,24 @@ public class test {
 
 	public static void main(String[] args) {
 		
-		int[] nums = new int[] {1,2,3,4,5};
+		LRUCache cache = new LRUCache(2);
 		
-		PriorityQueue<Integer> pq = new PriorityQueue<>();
+		cache.put(1, 1);
+		cache.put(2, 2);
 		
-		List<Integer> arrList = new ArrayList<>();
+		cache.get(1);
 		
 		
+		cache.put(3, 3);
+		/*
+		cache.get(2);
+		
+		cache.put(4, 4);
+		
+		cache.get(1);
+		cache.get(3);
+		cache.get(4);
+		*/
 		
 	}
 
